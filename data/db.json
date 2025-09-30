@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Portfolio Website",
+      "description": "A personal portfolio built with React",
+      "status": "Completed"
+    },
+    {
+      "id": 2,
+      "name": "Inventory Website",
+      "description": "A Inventory Website built with React",
+      "status": "On Hold"
+    },
+    {
+      "id": 3,
+      "name": "Task Management Website",
+      "description": "A Task Management Website built with React",
+      "status": "In Progess"
+    },
+    {
+      "id": 4,
+      "name": "Fitness",
+      "description": "A Fitness built with React",
+      "status": "Completed"
+    },
+    {
+      "id": 5,
+      "name": "Weather",
+      "description": "A weather website built with React",
+      "status": "In Progess"
+    },
+    {
+      "id": 6,
+      "name": "Todo List App",
+      "description": "A Todo List built with React",
+      "status": "In Progess"
+    },
+    {
+      "id": 7,
+      "name": "Football News App",
+      "description": "A football news website built with React",
+      "status": "Completed"
+    },
+    {
+      "id": 8,
+      "name": "Calculator App",
+      "description": "A calculator website built with React",
+      "status": "On Hold"
+    },
+    {
+      "id": 9,
+      "name": " Sports News Website",
+      "description": "A sports news website built with React",
+      "status": "In Progess"
+    },
+    {
+      "id": 10,
+      "name": "Indigo Website",
+      "description": "A indigo website built with React",
+      "status": "Completed"
+    }
+  ]
+}
