@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import useFetchData from "../Hooks/useFetchData";
 import SearchInput from "./SearchInput";
+import DropDown from "./DropDown";
 
-type projectType = {
+export type projectType = {
   id: string;
   name: string;
   description: string;
@@ -14,15 +15,26 @@ const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchProj, setSearchProj] = useState("");
   // console.log(projects);
+  const [selectSearch, setSelectSearch] = useState("");
+
   useEffect(() => {
     setCurrentPage(1);
   }, [searchProj]);
+
+  const handleSelectSearch = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectSearch(e.target.value);
+  };
+
   const handleChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchProj(e.target.value);
   };
 
   const filterProjects = projects.filter((proj: projectType) => {
-    return proj.name.toLowerCase().includes(searchProj.toLowerCase());
+    const filterSelect = selectSearch ? proj.status === selectSearch : true;
+    const searchFilter = proj.name
+      .toLowerCase()
+      .includes(searchProj.toLowerCase());
+    return searchFilter && filterSelect;
   });
 
   const projectPerPage = 3;
@@ -89,6 +101,11 @@ const HomePage = () => {
         <SearchInput
           searchProj={searchProj}
           handleChangeSearch={handleChangeSearch}
+        />
+        <DropDown
+          projects={projects}
+          selectSearch={selectSearch}
+          handleChange={handleSelectSearch}
         />
         <div className="grid grid-cols-3 gap-2 ">{renderProjects}</div>
         <div>{renderPagination}</div>
