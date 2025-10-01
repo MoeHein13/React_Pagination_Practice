@@ -11,7 +11,7 @@ const SearchInput = ({ searchProj, handleChangeSearch }: inputType) => {
         placeholder="searchFolder"
         value={searchProj}
         onChange={handleChangeSearch}
-        className="border-white p-3 border rounded text-gray-200 outline-0"
+        className="border-gray-800  p-3 border rounded text-gray-800 outline-0 dark:text-gray-200 dark:border-gray-200"
       />
     </div>
   );

@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Mini Practice Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React dashboard project with search, status filter dropdown, pagination, and dark theme support.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Project List:** Displays projects with name, description, and status.
+- **Search:** Filter projects by name.
+- **Status Dropdown:** Filter projects by status.
+- **Pagination:** Navigate through projects with Previous/Next buttons and page numbers.
+- **Dark Theme:** Toggle between light and dark modes.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Tailwind CSS (for styling)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone the repository:**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   ```bash
+   git clone https://github.com/your-username/mini-practice-dashboard.git
+   cd mini-practice-dashboard
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm start
+   ```
+
+4. **(Optional) Start your mock API server:**
+   - Make sure you have a backend running at `http://localhost:3000/projects` or use [json-server](https://github.com/typicode/json-server):
+     ```bash
+     npx json-server --watch db.json --port 3000
+     ```
+
+## Project Structure
+
+```
+src/
+  Components/
+    Homepage.tsx      # Main dashboard component
+    SearchInput.tsx   # Search input component
+    DropDown.tsx      # Status filter dropdown
+    DarkTheme.tsx     # Dark theme toggle
+  Hooks/
+    useFetchData.tsx  # Custom hook for fetching projects
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Search:** Type in the search box to filter projects by name.
+- **Status Filter:** Select a status from the dropdown to filter projects.
+- **Pagination:** Use Previous/Next buttons or page numbers to navigate.
+- **Dark Theme:** Click the theme toggle to switch modes.
