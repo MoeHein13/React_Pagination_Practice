@@ -2,6 +2,10 @@
 
 A simple React dashboard project with search, status filter dropdown, pagination, and dark theme support.
 
+## LiveDemo
+https://react-pagination-practice.vercel.app/
+
+
 ## Features
 
 - **Project List:** Displays projects with name, description, and status.
